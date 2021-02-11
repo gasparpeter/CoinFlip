@@ -1,45 +1,29 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #2e2c2c;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-family: sans-serif;
 }
 
 .game-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   min-width: 1200px;
   height: 700px;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-shadow: 0px 5px 8px 5px #1f1d1d;
-          box-shadow: 0px 5px 8px 5px #1f1d1d;
+  align-items: flex-end;
+  box-shadow: 0px 5px 8px 5px #1f1d1d;
   margin: 20px auto;
 }
 
 .game-box #opponent-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 30%;
   height: 100%;
   background-color: #4d3434;
@@ -48,34 +32,19 @@ body {
 }
 
 .game-box #opponent-section .opponent-head {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 10%;
   background: linear-gradient(225deg, transparent 50px, #122f3a 0);
 }
 
 .game-box #opponent-section .opponent-head .profile-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-box #opponent-section .opponent-head .profile-section h3 {
@@ -83,61 +52,33 @@ body {
 }
 
 .game-box #opponent-section .opponent-head .score-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-box #game-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 40%;
   height: 90%;
   background-color: #122f3a;
 }
 
 .game-box #game-section #tips {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 50%;
   height: 50px;
 }
 
 .game-box #game-section #tips #heads-tip {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
   border: 1px solid #e0e0e0;
@@ -149,15 +90,9 @@ body {
 }
 
 .game-box #game-section #tips #tails-tip {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
   border: 1px solid #e0e0e0;
@@ -168,21 +103,18 @@ body {
   background-color: #2a489b;
 }
 
+.game-box #game-section #tips #heads-tip.active,
+.game-box #game-section #tips #tails-tip.active {
+  background-color: #2a489b;
+}
+
 .game-box #game-section #coin {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   height: 120px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transition: all 0.5s ease;
+  transform-style: preserve-3d;
   transition: all 0.5s ease;
   background-color: #161615;
   border-radius: 50%;
@@ -197,8 +129,6 @@ body {
 }
 
 .game-box #my-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 30%;
   height: 100%;
@@ -208,34 +138,19 @@ body {
 }
 
 .game-box #my-section .my-head {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 10%;
   background: linear-gradient(135deg, transparent 50px, #122f3a 0);
 }
 
 .game-box #my-section .my-head .profile-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-box #my-section .my-head .profile-section h3 {
@@ -243,24 +158,14 @@ body {
 }
 
 .game-box #my-section .my-head .score-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-box .rotate {
-  -webkit-transform: rotateY(180%);
-          transform: rotateY(180%);
+  transform: rotateY(360deg);
 }
 
 .game-box .iras {

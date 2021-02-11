@@ -1,55 +1,95 @@
 const coin = document.getElementById("coin");
 const text = document.getElementById("text");
 
+const headsBtn = document.getElementById("heads-tip");
+const tailsBtn = document.getElementById("tails-tip");
 
+const myScore = document.getElementById("my-score");
+const opponentScore = document.getElementById("opponent-score");
+
+let myTip;
+
+const scoreIncrement = 100;
 
 coin.addEventListener("click", fejVagyIras);
 
-function fejVagyIras() {
-  
-    
+headsBtn.addEventListener("click", headsBtnClick);
+tailsBtn.addEventListener("click", tailsBtnClick);
 
-    // coin.classList.add("coinflip");
-
-    // for(let i=0; i < 5; i++){
-    //     addScore = myScore;
-    //     addScore++;
-    // }
-
-    if (Math.random() < 0.5){
-        console.log("fej");
-        coin.classList.remove("iras");
-        coin.classList.remove("fej");
-        coin.classList.add("fej");
-        coin.classList.add("rotate");
-
-        const renderedText = text.innerText;
-        text.innerText = "Heads";
-
-        var score = 0;
-        var infinity = 100;
-    
-        for(i=0 ;i <= infinity ; i++){
-            score++;
-    
-            document.getElementById("my-score").innerHTML = score;
-          
-        }
-
-
-    }else{
-        console.log("iras");
-        coin.classList.remove("fej");
-        coin.classList.remove("iras");
-        coin.classList.add("iras");
-        coin.classList.add("rotate");
-
-        const renderedText = text.innerText;
-        text.innerText = "Tails";
-       
-    }
-
-    
-    
+function headsBtnClick() {
+  tisztitsdGombokat();
+  headsBtn.classList.add("active");
+  myTip = "fej";
 }
 
+function tailsBtnClick() {
+  tisztitsdGombokat();
+  tailsBtn.classList.add("active");
+  myTip = "iras";
+}
+
+function fejVagyIras() {
+  if (myTip == undefined) {
+    alert("Valassz egy oldalt....");
+
+    return;
+  }
+
+  if (Math.random() < 0.5) {
+    console.log("fej");
+
+    tisztitsd();
+
+    coin.classList.add("fej");
+
+    text.innerText = "Fej";
+
+    // itt tudjuk hogy fej
+    // nezzuk meg hogy mit valasztottunk
+
+    if (myTip === "fej") {
+      incrementMyScore();
+    } else {
+      incrementOpponentScore();
+    }
+  } else {
+    console.log("iras");
+
+    tisztitsd();
+
+    coin.classList.add("iras");
+
+    text.innerText = "Iras";
+
+    if (myTip === "iras") {
+      incrementMyScore();
+    } else {
+      incrementOpponentScore();
+    }
+  }
+
+  // Ha van rajta "rotate" szedd le...
+  // Ha nincs tedd fel
+  // ez a .toggle
+  coin.classList.toggle("rotate");
+}
+
+function tisztitsd() {
+  coin.classList.remove("iras");
+  coin.classList.remove("fej");
+}
+
+function tisztitsdGombokat() {
+  headsBtn.classList.remove("active");
+  tailsBtn.classList.remove("active");
+}
+
+function incrementMyScore() {
+  myScore.innerText = parseInt(myScore.innerText) + scoreIncrement;
+  opponentScore.innerText = parseInt(opponentScore.innerText) - scoreIncrement;
+}
+
+function incrementOpponentScore() {
+  opponentScore.innerText = parseInt(opponentScore.innerText) + scoreIncrement;
+  myScore.innerText = parseInt(myScore.innerText) - scoreIncrement;
+}

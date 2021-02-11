@@ -1,186 +1,183 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(46, 44, 44);
-    color:#fff;
-    display: flex;
-    font-family: sans-serif;
+body {
+  background-color: rgb(46, 44, 44);
+  color: #fff;
+  display: flex;
+  font-family: sans-serif;
 }
 
-.game-box{
+.game-box {
+  display: flex;
+  flex-direction: row;
+  min-width: 1200px;
+  height: 700px;
+  align-items: flex-end;
+  box-shadow: 0px 5px 8px 5px #1f1d1d;
+  // background-color: rgb(110, 103, 103);
+  margin: 20px auto;
+
+  #opponent-section {
     display: flex;
-    flex-direction: row;
-    min-width: 1200px;
-    height: 700px;
-    align-items: flex-end;
-    box-shadow:0px 5px 8px 5px #1f1d1d;
-    // background-color: rgb(110, 103, 103);
-    margin: 20px auto;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(77, 52, 52);
+    overflow: hidden;
+    background: linear-gradient(225deg, transparent 50px, rgb(80, 77, 77) 0);
 
-    #opponent-section{
+    .opponent-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(225deg, transparent 50px, rgb(18, 47, 58) 0);
+
+      .profile-section {
         display: flex;
-        flex-direction: column;
-        width: 30%;
-        height: 100%;
-        background-color: rgb(77, 52, 52);
-        overflow: hidden;
-        background: linear-gradient(225deg, transparent 50px,rgb(80, 77, 77) 0);
-
-
-        .opponent-head{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 10%;
-            background: linear-gradient(225deg, transparent 50px, rgb(18, 47, 58) 0);
-
-            .profile-section{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                h3{
-                    margin-bottom: 5px;
-                }
-            }
-            .score-section{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-            
-        }
-    }
-    #game-section{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        width: 40%;
-        height: 90%;
-        background-color: rgb(18, 47, 58);
 
-        #tips{
-            display: flex;
-            flex-direction: row;
-            width: 50%;
-            height: 50px;
-
-            #heads-tip{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50%;
-                height: 100%;
-                border: 1px solid #e0e0e0;
-                cursor: pointer;
-                    &:hover{
-                        background-color: #2a489b;
-                    }
-                
-            }
-            #tails-tip{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50%;
-                height: 100%;
-                border: 1px solid #e0e0e0;
-                cursor: pointer;
-                &:hover{
-                    background-color: #2a489b;
-                }
-            }
+        h3 {
+          margin-bottom: 5px;
         }
-
-        #coin{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 120px;
-            height: 120px;
-            transform-style: preserve-3d;
-            transition: all 0.5s ease;
-            background-color: rgb(22, 22, 21);
-            border-radius: 50%;
-            cursor: pointer;
-    
-            p{
-                font-weight: 500;
-                font-size: 20px;
-                color:#000;
-                display: block;
-            }
-        }
-    }
-    
-    #my-section{
+      }
+      .score-section {
         display: flex;
-        width: 30%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  #game-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 90%;
+    background-color: rgb(18, 47, 58);
+
+    #tips {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      height: 50px;
+
+      #heads-tip {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
         height: 100%;
-        background-color: rgb(77, 52, 52);
-        overflow: hidden;
-        background: linear-gradient(135deg, transparent 50px, rgb(80, 77, 77) 0);
-
-
-        .my-head{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 10%;
-            background: linear-gradient(135deg, transparent 50px, rgb(18, 47, 58) 0);
-            
-            .profile-section{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                h3{
-                    margin-bottom: 5px;
-                }
-            }
-            .score-section{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-            }
-
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        &:hover {
+          background-color: #2a489b;
         }
-    }
-    
-    
-    
-   .rotate{
-    transform: rotateY(180%);
-   }
+      }
+      #tails-tip {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        &:hover {
+          background-color: #2a489b;
+        }
+      }
 
- 
-    .iras{
-     background-image: url("https://pbs.twimg.com/profile_images/598707313357131776/1790CegR_400x400.png");
-     background-size: 100%;     
+      #heads-tip,
+      #tails-tip {
+        &.active {
+          background-color: #2a489b;
+        }
+      }
     }
-    
-    .fej{
-        background-image: url("https://images-na.ssl-images-amazon.com/images/I/61%2Bpp5SZGbL._AC_.jpg");
-        background-size: cover;
+
+    #coin {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      background-color: rgb(22, 22, 21);
+      border-radius: 50%;
+      cursor: pointer;
+
+      p {
+        font-weight: 500;
+        font-size: 20px;
+        color: #000;
+        display: block;
+      }
     }
-    
-    #text{
-        font-size: 18px;
-        color:#fff;
-        font-weight: 400px;
-        margin-top:10px;
+  }
+
+  #my-section {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(77, 52, 52);
+    overflow: hidden;
+    background: linear-gradient(135deg, transparent 50px, rgb(80, 77, 77) 0);
+
+    .my-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(135deg, transparent 50px, rgb(18, 47, 58) 0);
+
+      .profile-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+          margin-bottom: 5px;
+        }
+      }
+      .score-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
     }
+  }
+
+  .rotate {
+    transform: rotateY(360deg);
+  }
+
+  .iras {
+    background-image: url("https://pbs.twimg.com/profile_images/598707313357131776/1790CegR_400x400.png");
+    background-size: 100%;
+  }
+
+  .fej {
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/61%2Bpp5SZGbL._AC_.jpg");
+    background-size: cover;
+  }
+
+  #text {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400px;
+    margin-top: 10px;
+  }
 }
-
